@@ -73,6 +73,6 @@ module.exports = {
         },
     },
     router: {
-        base: '/vue/'
+        base: '/vue/dist/'
     }
 };
