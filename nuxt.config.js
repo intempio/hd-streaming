@@ -73,6 +73,6 @@ module.exports = {
         },
     },
     router: {
-        base: '/vue/dist/'
+        base: 'https://raw.githubusercontent.com/marrajoy/vue/master/dist/'
     }
 };
