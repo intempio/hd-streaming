@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+  border-bottom: #398059 solid 5px;
+  border-top: #398059 solid 5px;
+}
+#si-wrapper .silc-btn-button.silc-btn-button-color {
+  background-color: #398059 !important;
+}
