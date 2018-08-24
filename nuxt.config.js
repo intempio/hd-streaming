@@ -13,13 +13,6 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
     ],
-    script: [
-      {
-        src:
-          '//www.socialintents.com/api/socialintents.1.3.js#2c9fa5636549dc8e0165564971330288',
-        async: 'async',
-      },
-    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 

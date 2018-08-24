@@ -1,8 +1,36 @@
-body {
-  height: 100vh;
-  border-bottom: #398059 solid 5px;
-  border-top: #398059 solid 5px;
-}
 #si-wrapper .silc-btn-button.silc-btn-button-color {
-  background-color: #398059 !important;
+  background-color: rgb(57, 128, 89) !important;
+}
+body {
+  border-bottom: #398059 solid 10px;
+  border-top: #398059 solid 10px;
+  height: 100vh;
+}
+.button.is-dark,
+.button.is-dark.is-hovered {
+  background-color: rgb(57, 128, 89) !important;
+  text-transform: uppercase;
+}
+.container-login {
+  margin: 12% 0 0;
+}
+.container-login h2 {
+  padding-bottom: 10px;
+}
+.question-block {
+  width: 72%;
+  margin: 0 auto;
+}
+.question-block .qust {
+  width: 75%;
+  display: inline-block;
+}
+.question-block .qust-btn {
+  width: 23%;
+  display: inline-block;
+  text-align: right;
+  float: right;
+}
+.qust-btn .button {
+  background: #111 !important;
 }

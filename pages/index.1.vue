@@ -5,13 +5,13 @@
         <div class="column is-4 is-offset-4 container-login">
           <h2 class="title has-text-centered">WELCOME</h2>
 
-          <form method="post" @submit.prevent="isSubmitted = true">
+          <form method="post" @submit.prevent="login">
 
             <div class="field">
               <label class="label">Name</label>
 
               <div class="control">
-                <input type="name" class="input" name="name" id="attendee_name">
+                <input type="name" class="input" name="name" v-model="name">
               </div>
             </div>
 
@@ -19,7 +19,7 @@
               <label class="label">Email</label>
 
               <div class="control">
-                <input type="email" class="input" name="email" id="attendee_email">
+                <input type="email" class="input" name="email" v-model="email">
               </div>
             </div>
 
@@ -34,13 +34,39 @@
 </template>
 
 <script>
-import axios from 'axios';
+//import Notification from '~/components/Notification';
+/*
 export default {
-  async login() {
-    await axios
-      .post('https://runflow.built.io/run/8zrghqwsf?sync=true')
-      .then(res => res.data);
+  middleware: 'guest',
+
+  components: {
+    Notification,
   },
-};
+
+  data() {
+    return {
+      email: '',
+      password: '',
+      error: null,
+    };
+  },
+
+  methods: {
+    async login() {
+      try {
+        await this.$auth.loginWith('local', {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        });
+
+        this.$router.push('/');
+      } catch (e) {
+        this.error = e.response.data.message;
+      }
+    },
+  },
+};*/
 </script>
 
