@@ -68,7 +68,7 @@
                         });
                     // response.data would be the response from the Built.io flow that you send
                     console.log(response);
-                    this.$router.push("/videos?");
+                    this.$router.push("/videos");
                 } catch(e) {
                     window.alert("Error logging in");
                 }
