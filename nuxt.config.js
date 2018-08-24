@@ -3,10 +3,9 @@ const pkg = require('./package');
 module.exports = {
     mode: 'spa',
 
-<<<<<<< HEAD
   /*
   ** Headers of the page
-  */
+  *
   head: {
     title: pkg.name,
     meta: [
@@ -15,8 +14,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-=======
+  },*/
     /*
     ** Headers of the page
     */
@@ -36,7 +34,6 @@ module.exports = {
         ],
         link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
     },
->>>>>>> 94976dad73418c1231e7eb51eb016d666977d9f6
 
     /*
     ** Customize the progress-bar color
@@ -88,6 +85,6 @@ module.exports = {
         },
     },
     router: {
-        base: '/vue/dist/'
+        base: process.env.NODE_ENV === "production" ? '/vue/dist/' : ""
     }
 };
