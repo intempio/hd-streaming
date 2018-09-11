@@ -1,17 +1,20 @@
 #si-wrapper .silc-btn-button.silc-btn-button-color {
-  background-color: rgb(57, 128, 89) !important;
+  background-color: #0097e1 !important;
 }
 body {
-  border-bottom: #398059 solid 10px;
-  border-top: #398059 solid 10px;
+  border-bottom: #0097e1 solid 10px;
+  border-top: #0097e1 solid 10px;
   height: 100vh;
 }
 .button.is-dark,
 .button.is-dark.is-hovered {
-  background-color: rgb(57, 128, 89) !important;
+  background-color: #0097e1 !important;
   text-transform: uppercase;
 }
 .container-login {
+  margin: 5% 0 0;
+}
+.cont-login {
   margin: 12% 0 0;
 }
 .container-login h2 {
@@ -33,4 +36,34 @@ body {
 }
 .qust-btn .button {
   background: #111 !important;
+}
+p.formMessage {
+  margin-top: 0;
+  font-style: italic;
+  color: #0097e1;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+#idholder {
+  display: none;
+}
+iframe {
+  max-width: 100%;
+  display: block;
+  height: 70vh;
+}
+@media screen and (max-width: 700px) {
+  iframe {
+    height: 50vh;
+  }
+  .question-block {
+    width: 98%;
+  }
 }
