@@ -2,18 +2,38 @@
   <section class="section">
     <div class="container">
       <div class="columns">
-        <div class="column is-4 is-offset-4 container-login">
-          <h2 class="title has-text-centered">INSERT VIDEO URL HERE</h2>
-          <form method="post" @submit.prevent="login">
+        <div class="column is-4 is-offset-4 cont-login" v-if="allow > 0">
+          <h2 class="title has-text-centered">INSERT VIDEO ID HERE</h2>
+          <form method="post" @submit.stop.prevent="submit()">
             <div class="field">
               <div class="control">
-                <input type="name" class="input" name="name" v-model="config">
+                <input type="name" class="input" name="name" v-model="url_id" id="url_id" required>
               </div>
             </div>
             <div class="control qust-btn">
-              <button type="submit" class="button is-dark is-fullwidth">SUBMIT</button>
+              <input type="submit" class="button is-dark is-fullwidth" value="SUBMIT" />
             </div>
           </form>
+          <p v-if="formMessage" class="formMessage">{{ formMessage }}</p>
+        </div>
+        <div class="column is-4 is-offset-4 cont-login" v-else>
+          <h2 class="title has-text-centered">LOGIN</h2>
+          <form method="post" @submit.stop.prevent="login()">
+            <div class="field">
+              <div class="control">
+                <input type="name" name="uname" class="input" v-model="uname" id="uname" required>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input type="password" class="input" name="password" v-model="password" id="password" required>
+              </div>
+            </div>
+            <div class="control qust-btn">
+              <input type="submit" class="button is-dark is-fullwidth" value="LOGIN" />
+            </div>
+          </form>
+          <p v-if="formMessage1" class="formMessage">{{ formMessage1 }}</p>
         </div>
       </div>
     </div>
@@ -21,39 +41,51 @@
 </template>
 
 <script>
-//import Notification from '~/components/Notification';
-/*
+import axios from 'axios';
 export default {
-  middleware: 'guest',
-
-  components: {
-    Notification,
-  },
-
+  name: 'config-form',
   data() {
     return {
-      email: '',
+      url_id: null,
+      formMessage: null,
+      formMessage1: null,
+      allow: '',
+      uname: '',
       password: '',
-      error: null,
     };
   },
-
+  head: {
+    title: 'Intempio HD Streaming Config',
+  },
   methods: {
-    async login() {
+    async submit() {
       try {
-        await this.$auth.loginWith('local', {
-          data: {
-            email: this.email,
-            password: this.password,
-          },
-        });
+        let response = await axios.post(
+          'https://runflow.built.io/run/8XcfHFHz?sync=true',
+          {
+            url_id: this.url_id,
+          }
+        );
+        // console.log(response);
 
-        this.$router.push('/');
+        this.formMessage = 'Video ID Changed!';
+        this.url_id = '';
+        this.$router.push('/videos');
+        //this.$router.push('/videos');
       } catch (e) {
-        this.error = e.response.data.message;
+        window.alert('Error logging in');
       }
     },
-  },
-};*/
-</script>
+    async login() {
+      var validuname = 'admin123';
+      var validpass = 'admin123';
+      var entereduname = this.uname;
+      var enteredpass = this.password;
 
+      if (entereduname === validuname && enteredpass === validpass)
+        this.allow = '1';
+      else this.formMessage1 = 'Wrong username or password!';
+    },
+  },
+};
+</script>
