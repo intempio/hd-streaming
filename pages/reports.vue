@@ -3,9 +3,7 @@
     <div class="container">
       <img src="http://intemp.io/wp-content/uploads/2018/05/logo.png" alt="" width="300" style="display:block;margin:-40px auto 40px">
       <div class="columns">
-        <div class="column is-one-quarter">
-          <input type="text" v-model="startTime" placeholder="Start Time" />
-        </div>
+        <div class="column is-one-quarter"></div>
         <div class="column is-one-quarter">
           <date-picker v-model="time3" range :shortcuts="shortcuts" lang="en" @change="onChange"></date-picker>
         </div>
