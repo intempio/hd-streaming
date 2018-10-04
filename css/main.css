@@ -1,20 +1,17 @@
 #si-wrapper .silc-btn-button.silc-btn-button-color {
-  background-color: #0097e1 !important;
+  background-color: rgb(57, 128, 89) !important;
 }
 body {
-  border-bottom: #0097e1 solid 10px;
-  border-top: #0097e1 solid 10px;
+  border-bottom: #398059 solid 10px;
+  border-top: #398059 solid 10px;
   height: 100vh;
 }
 .button.is-dark,
 .button.is-dark.is-hovered {
-  background-color: #0097e1 !important;
+  background-color: rgb(57, 128, 89) !important;
   text-transform: uppercase;
 }
 .container-login {
-  margin: 5% 0 0;
-}
-.cont-login {
   margin: 12% 0 0;
 }
 .container-login h2 {
@@ -40,7 +37,7 @@ body {
 p.formMessage {
   margin-top: 0;
   font-style: italic;
-  color: #0097e1;
+  color: #4bab76;
   font-size: 14px;
   margin-top: 3px;
 }
@@ -58,6 +55,23 @@ iframe {
   max-width: 100%;
   display: block;
   height: 70vh;
+}
+.cont-login {
+  margin-top: 10%;
+}
+.table td,
+.table th {
+  border: 1px solid #dbdbdb !important;
+}
+.table {
+  margin-top: 20px;
+  width: 95%;
+}
+.table th {
+  background: #dbdbdb;
+}
+tbody tr:nth-child(even) {
+  background: #f1f1f1;
 }
 @media screen and (max-width: 700px) {
   iframe {
