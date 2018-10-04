@@ -1,5 +1,8 @@
 <template>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 27146a5f584c92767af58295f307202c3717cc47
   <div>
     <img src="https://intempio.com/wp-content/uploads/2018/05/INTEMPIO_FINAL_Tag1.png" alt="" width="170" style="display:block;margin:20px auto">
     <iframe id="youtubevideo" width="950" height="530" v-bind:src="url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="margin:20px auto; display:block"></iframe>
@@ -12,6 +15,7 @@
           <div class="control qust-btn">
             <input type="submit" class="button is-dark is-fullwidth" value="SUBMIT" />
           </div>
+<<<<<<< HEAD
         </div>
       </form>
       <p v-if="formMessage" class="formMessage">{{ formMessage }}</p>
@@ -34,10 +38,20 @@
             </div>
         </div>
 >>>>>>> 58f8ceaa3610e855cd2c2fe0cbfe8c28ea51caee
+=======
+        </div>
+      </form>
+      <p v-if="formMessage" class="formMessage">{{ formMessage }}</p>
+      <input type="name" class="input" name="idholder" v-model="idholder" id="idholder">
+>>>>>>> 27146a5f584c92767af58295f307202c3717cc47
     </div>
+  </div>
 </template>
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 27146a5f584c92767af58295f307202c3717cc47
 import axios from 'axios';
 export default {
   name: 'videos-form',
@@ -59,6 +73,7 @@ export default {
     return {
       url: '',
       idholder: res.data.url,
+<<<<<<< HEAD
     };
 
     //this.url = res.data.url;
@@ -116,4 +131,45 @@ export default {
 
     //http://localhost:3000/videos?v=2ccaHpy5Ewo
 >>>>>>> 58f8ceaa3610e855cd2c2fe0cbfe8c28ea51caee
+=======
+    };
+
+    //this.url = res.data.url;
+    // console.log(res.data.url);
+  },
+  created: function() {
+    var domain = 'https://www.youtube.com/embed/';
+    var videoid = this.idholder;
+    var param = '?feature=oembed';
+    this.url = domain + videoid + param;
+  },
+  // head of the page
+  head: {
+    title: 'Intempio HD Streaming',
+  },
+  //any custom functions for the page
+  methods: {
+    async submit() {
+      try {
+        let response = await axios.post(
+          'https://runflow.built.io/run/13seuEdOzu?sync=true',
+          {
+            questions: this.questions,
+          }
+        );
+        // response.data would be the response from the Built.io flow that you send
+        console.log(response);
+        /* setTimeout(() => {
+          this.formMessage = 'Question Submitted!';
+        }, 1000);*/
+        this.formMessage = 'Question Submitted!';
+        this.questions = '';
+        //this.$router.push('/videos');
+      } catch (e) {
+        window.alert('Error logging in');
+      }
+    },
+  },
+};
+>>>>>>> 27146a5f584c92767af58295f307202c3717cc47
 </script>
