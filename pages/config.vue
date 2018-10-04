@@ -24,6 +24,7 @@
                 <input type="name" name="uname" class="input" v-model="uname" id="uname" required>
               </div>
             </div>
+
             <div class="field">
               <div class="control">
                 <input type="password" class="input" name="password" v-model="password" id="password" required>
@@ -52,7 +53,17 @@ export default {
       allow: '',
       uname: '',
       password: '',
+      current_date: null,
     };
+  },
+  created: function() {
+    var options = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    var today = new Date();
+    this.current_date = today.toLocaleDateString('en-US', options);
   },
   head: {
     title: 'Intempio HD Streaming Config',
@@ -61,9 +72,12 @@ export default {
     async submit() {
       try {
         let response = await axios.post(
-          'https://runflow.built.io/run/8XcfHFHz?sync=true',
+          'https://int-helpdesk-api.herokuapp.com/api/v1/AddVideoURL',
           {
-            url_id: this.url_id,
+            fields: {
+              'Video ID': this.url_id,
+              Date: this.current_date,
+            },
           }
         );
         // console.log(response);
