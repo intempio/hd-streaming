@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "moment": "^2.22.2",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.6.1",
     "nuxt-buefy": "^0.0.4",
     "vue-axios": "^2.1.2",
     "vue-clickaway": "^2.2.2",
